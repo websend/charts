@@ -2,7 +2,13 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+baseUrl: bookstack-example.local
+
 replicaCount: 1
+
+# Deployment strategy. Rolling is not compatible with RWO Persistent Volumes.
+# Values: Rolling | Recreate
+deploymentStrategy: Rolling
 
 image:
   repository: solidnerd/bookstack

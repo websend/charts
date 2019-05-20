@@ -9,6 +9,8 @@ metadata:
     heritage: {{ .Release.Service }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: {{ .Values.deploymentStrategy }}
   selector:
     matchLabels:
       app: {{ template "bookstack.name" . }}
@@ -38,7 +40,7 @@ spec:
               port: http
           env:
             - name: APP_URL
-              value: {{ .Values.ingress.hosts | quote }}
+              value: {{ .Values.baseUrl | quote }}
           {{- if .Values.ldap.enabled }}
             - name: AUTH_METHOD
               value: ldap
