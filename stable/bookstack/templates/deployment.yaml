@@ -64,6 +64,8 @@ spec:
           {{- if .Values.oauth.google.enabled }}
             - name: GOOGLE_AUTO_CONFIRM_EMAIL
               value: {{ .Values.oauth.google.autoRegister | quote }}
+            - name: GOOGLE_AUTO_REGISTER
+              value: {{ .Values.oauth.google.autoRegister | quote }}
             - name: GOOGLE_APP_ID
               valueFrom:
                 secretKeyRef:
@@ -77,6 +79,8 @@ spec:
           {{- end}}
           {{- if .Values.oauth.github.enabled }}
             - name: GITHUB_AUTO_CONFIRM_EMAIL
+              value: {{ .Values.oauth.github.autoRegister | quote }}
+            - name: GITHUB_AUTO_REGISTER
               value: {{ .Values.oauth.github.autoRegister | quote }}
             - name: GITHUB_APP_ID
               valueFrom:
@@ -92,6 +96,8 @@ spec:
           {{- if .Values.oauth.twitter.enabled }}
             - name: TWITTER_AUTO_CONFIRM_EMAIL
               value: {{ .Values.oauth.twitter.autoRegister | quote }}
+            - name: TWITTER_AUTO_REGISTER
+              value: {{ .Values.oauth.twitter.autoRegister | quote }}
             - name: TWITTER_APP_ID
               valueFrom:
                 secretKeyRef:
@@ -105,6 +111,8 @@ spec:
           {{- end}}
           {{- if .Values.oauth.facebook.enabled }}
             - name: FACEBOOK_AUTO_CONFIRM_EMAIL
+              value: {{ .Values.oauth.facebook.autoRegister | quote }}
+            - name: FACEBOOK_AUTO_REGISTER
               value: {{ .Values.oauth.facebook.autoRegister | quote }}
             - name: FACEBOOK_APP_ID
               valueFrom:
@@ -120,6 +128,8 @@ spec:
           {{- if .Values.oauth.slack.enabled }}
             - name: SLACK_AUTO_CONFIRM_EMAIL
               value: {{ .Values.oauth.slack.autoRegister | quote }}
+            - name: SLACK_AUTO_REGISTER
+              value: {{ .Values.oauth.slack.autoRegister | quote }}
             - name: SLACK_APP_ID
               valueFrom:
                 secretKeyRef:
@@ -133,6 +143,8 @@ spec:
           {{- end}}
           {{- if .Values.oauth.azure.enabled }}
             - name: AZURE_AUTO_CONFIRM_EMAIL
+              value: {{ .Values.oauth.azure.autoRegister | quote }}
+            - name: AZURE_AUTO_REGISTER
               value: {{ .Values.oauth.azure.autoRegister | quote }}
             - name: AZURE_TENANT
               value: {{ .Values.oauth.azure.tenant | quote }}
@@ -150,6 +162,8 @@ spec:
           {{- if .Values.oauth.okta.enabled }}
             - name: OKTA_AUTO_CONFIRM_EMAIL
               value: {{ .Values.oauth.okta.autoRegister | quote }}
+            - name: OKTA_AUTO_REGISTER
+              value: {{ .Values.oauth.okta.autoRegister | quote }}
             - name: OKTA_BASE_URL
               value: {{ .Values.oauth.okta.baseUrl | quote }}
             - name: OKTA_APP_ID
@@ -165,6 +179,8 @@ spec:
           {{- end}}
           {{- if .Values.oauth.gitlab.enabled }}
             - name: GITLAB_AUTO_CONFIRM_EMAIL
+              value: {{ .Values.oauth.gitlab.autoRegister | quote }}
+            - name: GITLAB_AUTO_REGISTER
               value: {{ .Values.oauth.gitlab.autoRegister | quote }}
             {{- if .Values.oauth.gitlab.baseUrl }}
             - name: GITLAB_BASE_URL
@@ -184,6 +200,8 @@ spec:
           {{- if .Values.oauth.twitch.enabled }}
             - name: TWITCH_AUTO_CONFIRM_EMAIL
               value: {{ .Values.oauth.twitch.autoRegister | quote }}
+            - name: TWITCH_AUTO_REGISTER
+              value: {{ .Values.oauth.twitch.autoRegister | quote }}
             - name: TWITCH_APP_ID
               valueFrom:
                 secretKeyRef:
@@ -197,6 +215,8 @@ spec:
           {{- end}}
           {{- if .Values.oauth.discord.enabled }}
             - name: DISCORD_AUTO_CONFIRM_EMAIL
+              value: {{ .Values.oauth.discord.autoRegister | quote }}
+            - name: DISCORD_AUTO_REGISTER
               value: {{ .Values.oauth.discord.autoRegister | quote }}
             - name: DISCORD_APP_ID
               valueFrom:
