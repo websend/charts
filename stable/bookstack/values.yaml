@@ -10,6 +10,9 @@ replicaCount: 1
 # Values: Rolling | Recreate
 deploymentStrategy: Rolling
 
+livenessProbe: True
+readinessProbe: True
+
 image:
   repository: solidnerd/bookstack
   tag: 0.25.2
