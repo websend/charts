@@ -34,10 +34,10 @@ spec:
             httpGet:
               path: /
               port: http
-          # readinessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
           env:
             - name: APP_URL
               value: {{ .Values.baseUrl | quote }}
