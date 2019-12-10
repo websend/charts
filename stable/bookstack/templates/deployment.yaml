@@ -268,6 +268,8 @@ spec:
             mountPath: /var/www/bookstack/storage/uploads
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+      nodeSelector:
+        {{- toYaml .Values.nodeSelector | nindent 8 }}
       volumes:
         - name: uploads
         {{- if .Values.persistence.uploads.enabled }}
